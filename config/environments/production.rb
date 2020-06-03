@@ -80,8 +80,8 @@ Rails.application.configure do
     :address => 'smtp.sendgrid.net',
     :port => 465,
     :authentication => :plain,
-    :enable_starttls_auto => true
-    :tls => true 
+    :enable_starttls_auto => true,
+    tls: true 
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
