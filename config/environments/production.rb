@@ -1,8 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.force_ssl = false
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -73,15 +71,18 @@ Rails.application.configure do
   host = 'protected-bayou-07254.herokuapp.com'
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'herokuapp.com',
+    :domain => 'heroku.com',
     :address => 'smtp.sendgrid.net',
-    :port => 465,
-    :authentication => :plain,
-    :enable_starttls_auto => true,
-    tls: true 
+    :port => "465",
+    :authentication         => :plain,
+    :enable_starttls_auto   => true,
+    :openssl_verify_mode    => "none",
+    :ssl                    => true,
+    :tls                    => true,
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
