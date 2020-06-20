@@ -7,9 +7,11 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:session][:password])
       #log the user in and redirect to user page
       if @user.activated?
+        forwarding_url = session[:forwarding_url]
+        reset_session
         log_in @user
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user) 
-        redirect_back_or @user
+        redirect_to forwarding_url || @user
       else 
         message = "Account not activated. "
         message += "Check your email for the activation link"
