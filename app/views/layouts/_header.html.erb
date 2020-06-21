@@ -1,9 +1,9 @@
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top navbackground">
       <div class="container"> 
-        <%= link_to "Pain Points", root_path, id: "logo"%>
+        <%= link_to "Flutter", root_path, id: "logo"%>
         <nav>
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed"
+          <button type="button" id="ham" class="navbar-toggle collapsed"
                 data-toggle="collapse"
                 data-target="#bs-example-navbar-collapse-1"
                 aria-expanded="false">
@@ -17,7 +17,6 @@
           id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
-            <li><%= link_to "Help",   help_path %></li>
             <% if logged_in? %>
               <li><%= link_to 'Users', users_path %></li>
               <li class="dropdown">

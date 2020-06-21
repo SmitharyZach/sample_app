@@ -67,6 +67,10 @@ p {
   line-height: 1.7em;
 }
 
+.mainbutton {
+  background-color: #3d78dc;
+}
+
 /* header */
 
 #logo {
@@ -81,6 +85,16 @@ p {
   &:hover {
     color: #fff;
     text-decoration: none;
+  }
+}
+
+.navbackground {
+  background-color: #3d78dc;
+}
+
+nav {
+  a {
+    color: white;
   }
 }
 
