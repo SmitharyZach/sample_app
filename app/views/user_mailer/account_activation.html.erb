@@ -1,6 +1,6 @@
 <p>Hi <%= @user.name %>,</p>
 
-<p>Welcome to Pain Points! An app based off of Michael Hartl's ruby on rails tutorial coded by me, Zach. Click the link below to activate your account:</p>
+<p>Welcome to Flutter! The world's premier twitter clone based off of Michael Hartl's ruby on rails tutorial coded by me, Zach. Click the link below to activate your account:</p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
